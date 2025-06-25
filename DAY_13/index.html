@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COUNTDOWN TIMER</title>
+    <style>
+        body{
+            display: flex;
+            background-color:antiquewhite
+        }
+        div{
+            display:flex;
+            flex-direction: column;
+            max-width: 40%;
+            background: linear-gradient(to right,green,white,gray);
+            align-items: center;
+            margin: auto;
+            margin-top: 160px;
+            padding: 30px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 5px 8px rgba(0,0,0,0.3);
+            transition: transform 0.3 ease, box-shadow 0.3s ease;
+
+        }
+        div:hover{
+            transform: translateY(-6px);
+            box-shadow:0 9px 15px rgba(0,0,0,0.9);
+        }
+        label{
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        input{
+            padding: 0.5rem;
+            margin: 1rem;
+
+        }
+        button{
+            padding: 0.5rem;
+            border-radius: 5px;
+            background-color: aquamarine;
+            font-weight: bold;
+            border: none;
+        }
+        p{
+            font-weight: bold;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+     <h2>COUNTDOWN TIMER IN SECONDS</h2>
+    <label for="time">TIME:</label>
+    <input type="number" id="time" placeholder="Enter in seconds">
+    <button onclick="startCountdown()">START</button>
+    <p id="display"></p>
+   </div>
+
+    <script>
+        let interval;
+        function startCountdown(){
+            clearInterval(interval);
+            seconds = parseInt(document.getElementById("time").value);
+            interval = setInterval(() => {
+                document.getElementById("display").textContent = `${seconds}s Left!`
+                if (seconds <= 0){
+                    clearInterval(interval);
+                    document.getElementById("display").textContent = `TIME UP!`
+                }
+                seconds--;
+            },1000);
+            if(isNaN(seconds) || seconds<0){
+                alert("ENTER A VALID NUMBER!");
+                return;
+            }
+        }
+    </script>
+</body>
+</html>

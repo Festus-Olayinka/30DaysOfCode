@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO APP</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+
+        }
+        div{
+            text-align: center;
+            background: linear-gradient(to right, black, blue,black);
+            padding: 0.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.9);
+        }
+        ul{
+            list-style: none;
+        }
+        input{
+            padding: 0.5rem;
+            width: 200px;
+            border-radius: 5px;
+            border: none;
+        }
+        button{
+            margin: 1rem;
+            padding: 0.5rem;
+            border: none;
+            color: white;
+            background-color: black;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+  <div>
+    <h2>TODO APP</h2>
+    <input type="text" id="taskInput" placeholder="NEXT TASK">
+    <br>
+    <button onclick="addTask()">ADD</button>
+    <ul id="taskList"></ul>
+  </div>  
+
+
+  <script>
+    const taskList = document.getElementById("taskList");
+
+    function addTask(){
+        const taskInput = document.getElementById("taskInput");
+        const taskText  = taskInput.value.trim();
+        if (!taskText) return;
+
+        const li = document.createElement("li");
+        li.textContent = taskText;
+        li.onclick = () => {
+            li.remove();
+            saveTasks();
+        }
+
+        taskList.appendChild(li);
+        taskInput.value = "";
+        saveTasks();
+
+    }
+
+    function saveTasks(){
+        localStorage.setItem("tasks", taskList.innerHTML);
+    }
+    function loadTasks(){
+        taskList.innerHTML = localStorage.getItem("tasks") || "";
+    }
+    loadTasks();
+    const allLi = document.getElementsByTagName('li')
+        console.log(allLi)
+        Array.from(allLi).forEach(el => {
+            el.addEventListener('click', event => {
+                console.log('Hello')
+                el.remove();
+                saveTasks()
+            })    
+        })
+
+  </script>
+</body>
+</html>

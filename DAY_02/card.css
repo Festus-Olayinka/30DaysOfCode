@@ -1,0 +1,28 @@
+body{
+    background-color:rgb(212, 208, 208);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+
+}
+.avatar{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+#profile{
+    background: linear-gradient(rgb(82, 82, 199),rgb(185, 82, 82));
+    text-align: center;
+    border-radius: 20px;
+    padding: 2rem;
+    transition: 0.5s ease;
+  
+}
+#profile:hover{
+    background:linear-gradient(rgb(43, 40, 40),rgb(128, 94, 88));
+    color: white;
+    
+}

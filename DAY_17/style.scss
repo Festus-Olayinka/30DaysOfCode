@@ -1,0 +1,17 @@
+@import 'main';
+
+body{
+    background-color: aquamarine;
+}
+div{
+    color: white;
+    h1{
+        color: pink;
+        main{
+            color: grey;
+        }
+    }
+    &:hover{
+        color: $background;
+    }
+}

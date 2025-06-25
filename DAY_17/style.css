@@ -1,0 +1,20 @@
+body {
+  background-color: aquamarine;
+}
+
+div {
+  color: white;
+}
+
+div h1 {
+  color: pink;
+}
+
+div h1 main {
+  color: grey;
+}
+
+div:hover {
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */

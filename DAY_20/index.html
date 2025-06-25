@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Board</title>
+    <style>
+        #board{
+            display: grid;
+            grid-template-columns: repeat(20, 20px);
+            width: 400px;
+            margin: 2rem auto;
+        }
+        .cell{
+            width: 20px;
+            height: 20px;
+            border: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2 style="text-align: center">Drawing Board</h2>
+    </header>
+    <div id="board"></div>
+
+    <script>
+        const board = document.getElementById("board");
+
+        for (let i=0; i<400; i++){
+            const cell = document.createElement("div");
+            cell.className = "cell";
+
+            let isDrawing = false;
+            document.addEventListener("mousedown", () => isDrawing = true);
+            document.addEventListener("mouseup", () => isDrawing = false);
+
+            cell.addEventListener("mouseover", () => {
+                if (isDrawing) cell.style.background = "#000"
+            });
+
+            board.appendChild(cell);
+
+        }
+
+
+
+    </script>
+</body>
+</html>

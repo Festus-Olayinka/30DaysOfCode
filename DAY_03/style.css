@@ -1,0 +1,43 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(white,rgb(169, 91, 225))  
+}
+
+.palette{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 10px;
+    row-gap: 20px;
+    border: 5px solid black;
+    border-radius: 20px;
+    padding: 10px;
+}
+.color{
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.color:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      z-index: 2;
+    }
+@media (max-width: 900px) {
+  .palette {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on tablets */
+  }
+}
+
+@media (max-width: 500px) {
+  .palette {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on phones */
+  }
+}

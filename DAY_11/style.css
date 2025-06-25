@@ -1,0 +1,38 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 100px;
+}
+
+.converter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 20px;
+    background: linear-gradient(orange,yellow,pink);
+    border-radius: 20px;
+}
+
+select{
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+input{
+    padding: 0.5rem;
+    margin: 1rem;
+    border-radius: 5px;
+}
+button{
+    padding: 0.5rem;
+    margin: 1rem;
+    border-radius: 5px;
+}
+
+p{
+    font-size: 2rem;
+}

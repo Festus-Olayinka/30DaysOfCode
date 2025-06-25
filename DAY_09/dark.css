@@ -1,0 +1,39 @@
+#btnContainer{
+    display: flex;
+    justify-content:right;
+    padding: 20px;
+}
+
+#myBtn{
+    font-size: 1.5rem;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    margin-top: 50px;
+    margin-bottom: 0;
+}
+
+.avatar{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+#profileContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 0;
+}
+
+#profile{
+    background: linear-gradient(blue,indigo,violet);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.9);
+}
+p{
+    color: white;
+}
